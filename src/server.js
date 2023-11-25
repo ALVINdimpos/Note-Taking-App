@@ -6,6 +6,7 @@ const { sequelize } = require('./models');
 const AuthRoute = require('./routes/Auth.routes');
 const NoteRoute = require('./routes/Note.routes');
 const RoleRoute = require('./routes/Role.router');
+const UserRoute = require('./routes/User.routes');
 const cookieParser = require('cookie-parser');
 const app = express();
 // use cors and body parse
@@ -25,6 +26,8 @@ app.use('/notes', NoteRoute);
 // role routes
 app.use('/roles', RoleRoute);
 
+// user routes
+app.use('/users', UserRoute);
 // db connection instance
 const dbCon = async () => {
   try {

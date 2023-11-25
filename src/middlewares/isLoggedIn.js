@@ -8,9 +8,9 @@ const isLoggedIn = async (req, res, next) => {
   }
 
   try {
-    const { userId } = jwt.verify(token, process.env.JWT_SECRET);
+    const { id } = jwt.verify(token, process.env.JWT_SECRET);
 
-    req.userId = userId;
+    req.userId = id;
     next();
   } catch (error) {
     return res.status(500).json({ error: error.message });

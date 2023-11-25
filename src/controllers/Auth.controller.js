@@ -93,9 +93,16 @@ const login = async (req, res) => {
     const isValid = await bcrypt.compare(password, user.password);
     if (!isValid) throw new Error('Invalid password');
 
-    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-      expiresIn: '1d',
-    });
+    const token = jwt.sign(
+      {
+        id: user.id,
+        roleId: user.roleId,
+      },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: '1d',
+      }
+    );
 
     res.cookie('jwt', token, {
       maxAge: 24 * 60 * 60 * 1000, // Cookie expires after one day

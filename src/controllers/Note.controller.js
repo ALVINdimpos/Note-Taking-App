@@ -4,7 +4,6 @@ const { check, validationResult } = require('express-validator');
 const createValidation = [
   check('title').notEmpty().withMessage('Title is required'),
   check('content').notEmpty().withMessage('Content is required'),
-  check('userId').notEmpty().withMessage('User ID is required'),
 ];
 const create = async (req, res) => {
   try {
@@ -16,7 +15,8 @@ const create = async (req, res) => {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { title, content, userId } = req.body;
+    const { title, content } = req.body;
+    const userId = req.userId;
     const note = await Note.create({
       title,
       content,
