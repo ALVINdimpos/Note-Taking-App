@@ -26,10 +26,10 @@
     "api"
   ],
   "husky": {
-  "hooks": {
-    "pre-commit": "lint-staged"
-  }
-},
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "**/*.{js,ts}": "prettier --write"
   },
@@ -43,6 +43,7 @@
     "crypto-js": "^4.1.1",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
     "express-validator": "^7.0.1",
     "jsonwebtoken": "^9.0.1",
     "mysql": "^2.18.1",
