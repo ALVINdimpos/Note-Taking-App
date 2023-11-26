@@ -1,5 +1,6 @@
 const { Role } = require('../models');
 const { User } = require('../models');
+const logger = require('../utils/logger/index');
 const createRole = async (req, res) => {
   const { name } = req.body;
   const role = await Role.create({ name });
@@ -19,6 +20,7 @@ const updateRole = async (req, res) => {
   const role = await Role.findByPk(id);
 
   if (!role) {
+    logger.error(`Updating Role: Role with ID ${id} not found`);
     return res.status(404).json({ ok: false, message: 'Role not found' });
   }
 
@@ -34,6 +36,7 @@ const deleteRole = async (req, res) => {
   const role = await Role.findByPk(id);
 
   if (!role) {
+    logger.error(`Deleting Role: Role with ID ${id} not found`);
     return res.status(404).json({ ok: false, message: 'Role not found' });
   }
 
@@ -50,6 +53,7 @@ const assignUserRole = async (req, res) => {
   const user = await User.findByPk(userId);
 
   if (!user) {
+    logger.error(`Assigning Role: User with ID ${userId} not found`);
     return res.status(404).json({ ok: false, message: 'User not found' });
   }
 
@@ -57,6 +61,7 @@ const assignUserRole = async (req, res) => {
   const role = await Role.findByPk(roleId);
 
   if (!role) {
+    logger.error(`Assigning Role: Role with ID ${roleId} not found`);
     return res.status(404).json({ ok: false, message: 'Role not found' });
   }
 

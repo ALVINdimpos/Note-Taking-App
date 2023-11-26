@@ -8,6 +8,7 @@ const AuthRoute = require('./routes/Auth.routes');
 const NoteRoute = require('./routes/Note.routes');
 const RoleRoute = require('./routes/Role.router');
 const UserRoute = require('./routes/User.routes');
+const logger = require('./utils/logger/index');
 const cookieParser = require('cookie-parser');
 const app = express();
 // use cors and body parse
@@ -36,11 +37,13 @@ app.all('*', (req, res) => {
 });
 
 app.use(function (error, req, res, next) {
+  logger.error(error.message);
   res.status(500).json({
     ok: false,
     message: error.message,
   });
 });
+
 // db connection instance
 const dbCon = async () => {
   try {

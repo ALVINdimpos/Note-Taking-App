@@ -4,6 +4,7 @@ const crypto = require('crypto');
 const { User } = require('../models');
 const { Role } = require('../models');
 const Sequelize = require('sequelize');
+const logger = require('../utils/logger/index');
 const sendPasswordResetEmail = require('../utils/sendPasswordResetEmail');
 const { check, validationResult } = require('express-validator');
 const { validateEmail, validatePassword } = require('../utils/validation');
@@ -16,12 +17,16 @@ const signup = async (req, res) => {
   // Validate request body fields
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    logger.error(`Adding User: ${JSON.stringify(errors.array())}`);
     return res.status(400).json({ ok: false, errors: errors.array() });
   }
 
   const { firstName, lastName, email, password, roleId } = req.body;
   // email validation
   if (!validateEmail(email)) {
+    logger.error(
+      `Adding User: Invalid email address: ${email}, should follow the following partner xxx@xxx.xxx`
+    );
     return res.status(400).json({
       ok: false,
       message: 'Invalid credentials',
@@ -30,6 +35,9 @@ const signup = async (req, res) => {
   }
 
   if (!validatePassword(password)) {
+    logger.error(
+      `Adding User: Invalid password: ${password}, must be at least 8 characters long and contain at least one capital letter and one digit`
+    );
     return res.status(400).json({
       ok: false,
       message: 'Invalid credentials',
@@ -40,8 +48,9 @@ const signup = async (req, res) => {
   const hashedPassword = await bcrypt.hash(password, 10);
 
   // Check if the user with the provided email already exists
-  const existingUser = await User.findOne({ where: { emal: email } });
+  const existingUser = await User.findOne({ where: { email } });
   if (existingUser) {
+    logger.error(`Adding User: User with this email: ${email} already exists.`);
     return res.status(409).json({
       ok: false,
       message: `User with this email: ${email} already exists.`,
@@ -64,6 +73,7 @@ const signup = async (req, res) => {
     password: hashedPassword,
     roleId,
   });
+
   return res.status(201).json({
     ok: true,
     message: 'User successfully added',
@@ -75,15 +85,24 @@ const login = async (req, res) => {
   await Promise.all(loginValidation.map(validation => validation.run(req)));
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    logger.error(`Login User: ${JSON.stringify(errors.array())}`);
     return res.status(400).json({ errors: errors.array() });
   }
 
   const { email, password } = req.body;
   const user = await User.findOne({ where: { email } });
-  if (!user) throw new Error('User not registered');
+  if (!user) {
+    logger.error(`Login User: User with this email: ${email} not found`);
+    return res.status(404).json({ error: 'User not found' });
+  }
 
   const isValid = await bcrypt.compare(password, user.password);
-  if (!isValid) throw new Error('Invalid password');
+  if (!isValid) {
+    logger.error(
+      `Login User: User with this email: ${email} entered a wrong password`
+    );
+    return res.status(401).json({ error: 'Incorrect password' });
+  }
 
   const token = jwt.sign(
     {
@@ -117,6 +136,7 @@ const forgotPassword = async (req, res) => {
   const user = await User.findOne({ where: { email } });
 
   if (!user) {
+    logger.error(`Forgot Password: User with this email: ${email} not found`);
     return res.status(404).json({
       error: 'User not found',
     });
@@ -150,6 +170,7 @@ const resetPassword = async (req, res) => {
   });
 
   if (!user) {
+    logger.error(`Reset Password: Invalid or expired reset token: ${token}`);
     return res.status(400).json({ error: 'Invalid or expired reset token' });
   }
 
@@ -170,6 +191,7 @@ const changePassword = async (req, res) => {
   const user = await User.findByPk(userId);
 
   if (!user) {
+    logger.error(`Change Password: User with ID ${userId} not found`);
     return res.status(404).json({ error: 'User not found' });
   }
 
@@ -177,6 +199,9 @@ const changePassword = async (req, res) => {
   const isSame = await bcrypt.compare(currentPassword, user.password);
 
   if (!isSame) {
+    logger.error(
+      `Change Password: User with ID ${userId} entered a wrong current password`
+    );
     return res.status(401).json({ error: 'Current password is incorrect' });
   }
 

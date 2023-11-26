@@ -1,8 +1,8 @@
-const { Role } = require('../models');
+// Purpose: User controller
 const { User } = require('../models');
 const bcrypt = require('bcrypt');
 const { validateEmail, validatePassword } = require('../utils/validation');
-
+const logger = require('../utils/logger/index');
 // gett all users and theier roles
 
 const getAllUsers = async (req, res) => {
@@ -18,6 +18,7 @@ const getSingleUser = async (req, res) => {
   const user = await User.findByPk(id);
 
   if (!user) {
+    logger.error(`Retrieving User: User with ID ${id} not found`);
     return res.status(404).json({ ok: false, message: 'User not found' });
   }
 
@@ -31,6 +32,7 @@ const deleteUser = async (req, res) => {
   const user = await User.findByPk(id);
 
   if (!user) {
+    logger.error(`Deleting User: User with ID ${id} not found`);
     return res.status(404).json({ ok: false, message: 'User not found' });
   }
 
@@ -45,19 +47,26 @@ const updateUser = async (req, res) => {
   const user = await User.findByPk(id);
 
   if (!user) {
+    logger.error(`Updating User: User with ID ${id} not found`);
     return res.status(404).json({ ok: false, message: 'User not found' });
   }
 
   // email validation
   if (!validateEmail(email)) {
+    logger.error(
+      `Updating User: Invalid email address: ${email}, should follow the following partner xxx@xxx.xxx `
+    );
     return res.status(400).json({
       ok: false,
       message: 'Invalid credentials',
-      info: 'The email should follow the following partner',
+      info: 'The email should follow the following partner xxx@xxx.xxx',
     });
   }
 
   if (!validatePassword(password)) {
+    logger.error(
+      `Updating User: Invalid password: ${password}, must be at least 8 characters long and contain at least one capital letter and one digit`
+    );
     return res.status(400).json({
       ok: false,
       message: 'Invalid credentials',

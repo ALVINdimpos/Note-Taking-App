@@ -1,6 +1,6 @@
 const { Note } = require('../models');
 const { check, validationResult } = require('express-validator');
-
+const logger = require('../utils/logger/index');
 const createValidation = [
   check('title').notEmpty().withMessage('Title is required'),
   check('content').notEmpty().withMessage('Content is required'),
@@ -11,6 +11,7 @@ const create = async (req, res) => {
 
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    logger.error(`Adding Note: ${JSON.stringify(errors.array())}`);
     return res.status(400).json({ errors: errors.array() });
   }
 
@@ -49,6 +50,7 @@ const findOne = async (req, res) => {
   });
 
   if (!note) {
+    logger.error(`Retrieving Note: Note with ID ${id} not found`);
     return res.status(404).json({
       ok: false,
       message: 'Note not found',
@@ -73,6 +75,7 @@ const update = async (req, res) => {
   });
 
   if (!note) {
+    logger.error(`Updating Note: Note with ID ${id} not found`);
     return res.status(404).json({
       ok: false,
       message: 'Note not found',
@@ -100,6 +103,7 @@ const remove = async (req, res) => {
   });
 
   if (!note) {
+    logger.error(`Deleting Note: Note with ID ${id} not found`);
     return res.status(404).json({
       ok: false,
       message: 'Note not found',
