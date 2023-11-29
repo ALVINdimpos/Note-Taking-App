@@ -20,7 +20,7 @@ const sendPasswordResetEmail = (userEmail, resetToken) => {
     html: `
       <p>You have requested a password reset.</p>
       <p>Click the following link to reset your password:</p>
-      <a href="http://localhost:8080/api/users/reset-password/token=${resetToken}">Reset Password</a>
+      <a href="http://localhost:5173/change-password/token=${resetToken}">Reset Password</a>
     `,
   };
 

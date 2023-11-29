@@ -8,7 +8,6 @@ const logger = require('../utils/logger/index');
 const sendPasswordResetEmail = require('../utils/sendPasswordResetEmail');
 const { check, validationResult } = require('express-validator');
 const { validateEmail, validatePassword } = require('../utils/validation');
-
 const loginValidation = [
   check('email').isEmail().withMessage('Invalid email address'),
   check('password').notEmpty().withMessage('Password is required'),
@@ -21,7 +20,7 @@ const signup = async (req, res) => {
     return res.status(400).json({ ok: false, errors: errors.array() });
   }
 
-  const { firstName, lastName, email, password, roleId } = req.body;
+  const { firstName, lastName, email, password } = req.body;
   // email validation
   if (!validateEmail(email)) {
     logger.error(
@@ -56,22 +55,12 @@ const signup = async (req, res) => {
       message: `User with this email: ${email} already exists.`,
     });
   }
-  const role = await Role.findByPk(roleId);
-
-  if (!role) {
-    logger.error(`Adding User: Role with ID ${id} not found`);
-    return res.status(404).json({
-      ok: false,
-      message: 'Role not found',
-    });
-  }
   // Create the user
   const user = await User.create({
     firstName,
     lastName,
     email,
     password: hashedPassword,
-    roleId,
   });
 
   return res.status(201).json({
@@ -115,7 +104,7 @@ const login = async (req, res) => {
     }
   );
 
-  res.cookie('jwt', token, {
+  res.cookie('authorization', token, {
     maxAge: 24 * 60 * 60 * 1000, // Cookie expires after one day
     httpOnly: true,
     domain: 'localhost', // Set to your domain
@@ -125,6 +114,8 @@ const login = async (req, res) => {
   res.status(200).json({
     ok: true,
     message: 'User logged in successfully',
+    userFistName: user.firstName,
+    userLastName: user.lastName,
     token,
   });
 };

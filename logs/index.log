@@ -4,3 +4,116 @@
 2023-11-26 13:06:43 error: Adding User: [object Object]
 2023-11-26 13:10:57 error: Adding User: [object Object]
 2023-11-26 13:12:00 error: Adding User: [{"type":"field","msg":"First name is required","path":"firstName","location":"body"}]
+2023-11-29 11:51:54 error: Login User: User with this email: princeelysee@gmail.com not found
+2023-11-29 11:54:29 error: Login User: User with this email: princeelysee@gmail.com not found
+2023-11-29 12:03:17 error: Login User: User with this email: princeelysee@gmail.com not found
+2023-11-29 16:02:16 error: Adding User: [{"type":"field","msg":"First name is required","path":"firstName","location":"body"}]
+2023-11-29 16:03:00 error: Adding User: User with this email: test6@gmail.com already exists.
+2023-11-29 16:03:13 error: id is not defined
+2023-11-29 16:32:21 error: Login User: [{"type":"field","value":"test6@gmail.c","msg":"Invalid email address","path":"email","location":"body"}]
+2023-11-29 16:32:21 error: Login User: [{"type":"field","value":"test6@gmail.c","msg":"Invalid email address","path":"email","location":"body"}]
+2023-11-29 16:34:33 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:34:33 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:34:34 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:34:37 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:41:49 error: Login User: User with this email: test6@gmail.co not found
+2023-11-29 16:41:49 error: Login User: User with this email: test6@gmail.co not found
+2023-11-29 16:41:50 error: Login User: User with this email: test6@gmail.co not found
+2023-11-29 16:41:50 error: Login User: User with this email: test6@gmail.co not found
+2023-11-29 16:41:50 error: Login User: User with this email: test6@gmail.co not found
+2023-11-29 16:41:50 error: Login User: User with this email: test6@gmail.co not found
+2023-11-29 16:41:51 error: Login User: User with this email: test6@gmail.co not found
+2023-11-29 16:41:51 error: Login User: User with this email: test6@gmail.co not found
+2023-11-29 16:42:04 error: Login User: User with this email: test6@gmail.co not found
+2023-11-29 16:45:01 error: Login User: User with this email: test6@gmail.co not found
+2023-11-29 16:45:01 error: Login User: User with this email: test6@gmail.co not found
+2023-11-29 16:45:02 error: Login User: User with this email: test6@gmail.co not found
+2023-11-29 16:45:04 error: Login User: User with this email: test6@gmail.co not found
+2023-11-29 16:45:17 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:45:17 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:47:26 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:47:27 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:47:27 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:47:27 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:48:44 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:48:45 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:48:55 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:53:28 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:53:29 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:53:30 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:53:30 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:53:30 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:53:30 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:53:31 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:53:37 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:53:37 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:53:37 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:54:51 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:54:52 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:54:52 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:54:52 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:54:53 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:55:21 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:56:20 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 16:57:59 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 17:15:22 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 17:22:46 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-29 18:01:50 error: Login User: User with this email: kigalicity@gmail.com not found
+2023-11-29 18:01:52 error: Login User: User with this email: kigalicity@gmail.com not found
+2023-11-29 18:03:07 error: Login User: User with this email: fistonalvin1@gmail.com not found
+2023-11-29 18:03:41 error: Login User: User with this email: fistonalvin1@gmail.com not found
+2023-11-29 21:27:47 error: Reset Password: Invalid or expired reset token: 0fe09ddbb0da084c01cc9a8870c636271dd93503
+2023-11-29 21:35:17 error: Reset Password: Invalid or expired reset token: 0fe09ddbb0da084c01cc9a8870c636271dd93503
+2023-11-29 21:35:38 error: Reset Password: Invalid or expired reset token: 0fe09ddbb0da084c01cc9a8870c636271dd93503
+2023-11-29 21:35:47 error: Reset Password: Invalid or expired reset token: 0fe09ddbb0da084c01cc9a8870c636271dd93503
+2023-11-29 21:36:23 error: Reset Password: Invalid or expired reset token: 0fe09ddbb0da084c01cc9a8870c636271dd93503
+2023-11-29 21:37:24 error: Reset Password: Invalid or expired reset token: 0fe09ddbb0da084c01cc9a8870c636271dd93503
+2023-11-29 21:38:12 error: Reset Password: Invalid or expired reset token: 0fe09ddbb0da084c01cc9a8870c636271dd93503
+2023-11-29 21:38:39 error: Reset Password: Invalid or expired reset token: 0fe09ddbb0da084c01cc9a8870c636271dd93503
+2023-11-29 21:39:52 error: Reset Password: Invalid or expired reset token: 0fe09ddbb0da084c01cc9a8870c636271dd93503
+2023-11-29 21:40:20 error: Reset Password: Invalid or expired reset token: 0fe09ddbb0da084c01cc9a8870c636271dd93503
+2023-11-29 23:43:30 error: Data too long for column 'content' at row 1
+2023-11-30 00:07:33 error: Reset Password: Invalid or expired reset token: 0fe09ddbb0da084c01cc9a8870c636271dd93503
+2023-11-30 00:33:07 error: Change Password: User with ID undefined not found
+2023-11-30 00:33:29 error: Adding User: User with this email: fistonalvin@gmail.com already exists.
+2023-11-30 00:35:11 error: Change Password: User with ID undefined not found
+2023-11-30 00:36:32 error: Change Password: User with ID undefined not found
+2023-11-30 00:38:29 error: Change Password: User with ID undefined not found
+2023-11-30 00:44:12 error: Change Password: User with ID undefined not found
+2023-11-30 00:45:11 error: Change Password: User with ID undefined not found
+2023-11-30 00:45:16 error: Change Password: User with ID undefined not found
+2023-11-30 00:47:37 error: Change Password: User with ID 2 entered a wrong current password
+2023-11-30 00:47:50 error: Change Password: User with ID 2 entered a wrong current password
+2023-11-30 00:48:44 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-11-30 00:49:40 error: Data too long for column 'content' at row 1
+2023-11-30 00:50:01 error: Data too long for column 'content' at row 1
+2023-11-30 00:52:47 error: Data too long for column 'content' at row 1
+2023-11-30 00:54:18 error: Data too long for column 'content' at row 1
+2023-11-30 00:57:26 error: Adding User: Invalid password: kigalicity, must be at least 8 characters long and contain at least one capital letter and one digit
+2023-11-30 00:57:32 error: Adding User: Invalid password: kigalicity, must be at least 8 characters long and contain at least one capital letter and one digit
+2023-11-30 00:57:52 error: Adding User: Invalid password: kigalicity, must be at least 8 characters long and contain at least one capital letter and one digit
+2023-11-30 00:58:15 error: Adding User: Invalid password: philsein@250, must be at least 8 characters long and contain at least one capital letter and one digit
+2023-11-30 00:58:40 error: Adding User: Invalid password: philsein@250ddddddd, must be at least 8 characters long and contain at least one capital letter and one digit
+2023-11-30 00:58:43 error: Adding User: Invalid password: philsein@250dddddddddd, must be at least 8 characters long and contain at least one capital letter and one digit
+2023-12-01 09:22:49 error: Login User: User with this email: princeelysee@gmail.com entered a wrong password
+2023-12-01 12:32:48 error: Deleting User: User with ID 13 not found
+2023-12-01 12:35:17 error: Cannot delete or update a parent row: a foreign key constraint fails (`bizcotap_new`.`notes`, CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`))
+2023-12-01 12:35:32 error: Cannot delete or update a parent row: a foreign key constraint fails (`bizcotap_new`.`notes`, CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`))
+2023-12-01 12:35:52 error: Deleting User: User with ID 1 not found
+2023-12-01 12:35:58 error: Adding User: User with this email: fistonalvin1@gmail.com already exists.
+2023-12-01 12:37:35 error: Cannot delete or update a parent row: a foreign key constraint fails (`bizcotap_new`.`notes`, CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`))
+2023-12-01 12:39:15 error: Cannot delete or update a parent row: a foreign key constraint fails (`bizcotap_new`.`notes`, CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`))
+2023-12-01 12:39:27 error: Cannot delete or update a parent row: a foreign key constraint fails (`bizcotap_new`.`notes`, CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`))
+2023-12-01 12:39:56 error: Cannot delete or update a parent row: a foreign key constraint fails (`bizcotap_new`.`notes`, CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`))
+2023-12-01 12:40:06 error: Cannot delete or update a parent row: a foreign key constraint fails (`bizcotap_new`.`notes`, CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`))
+2023-12-01 12:40:49 error: Cannot delete or update a parent row: a foreign key constraint fails (`bizcotap_new`.`notes`, CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`))
+2023-12-01 12:41:00 error: Cannot delete or update a parent row: a foreign key constraint fails (`bizcotap_new`.`notes`, CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`))
+2023-12-01 12:45:21 error: Deleting User: User with ID 10 not found
+2023-12-01 13:05:00 error: Unexpected token } in JSON at position 117
+2023-12-01 13:05:15 error: Updating User: Invalid password: undefined, must be at least 8 characters long and contain at least one capital letter and one digit
+2023-12-01 13:06:27 error: data and salt arguments required
+2023-12-03 21:02:45 error: Login User: User with this email: arletteatete@adminatete.com not found
+2023-12-03 21:02:50 error: Login User: User with this email: fistonalvin1@gmail.com not found
+2023-12-03 21:02:52 error: Login User: User with this email: fistonalvin1@gmail.com not found
+2023-12-03 21:05:36 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-12-03 21:06:45 error: Adding User: User with this email: fistonalvin1@gmail.com already exists.

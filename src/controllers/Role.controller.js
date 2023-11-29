@@ -1,6 +1,7 @@
 const { Role } = require('../models');
 const { User } = require('../models');
 const logger = require('../utils/logger/index');
+
 const createRole = async (req, res) => {
   const { name } = req.body;
   const role = await Role.create({ name });
