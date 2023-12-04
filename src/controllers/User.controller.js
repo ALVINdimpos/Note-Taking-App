@@ -63,25 +63,28 @@ const updateUser = async (req, res) => {
     });
   }
 
-  if (!validatePassword(password)) {
-    logger.error(
-      `Updating User: Invalid password: ${password}, must be at least 8 characters long and contain at least one capital letter and one digit`
-    );
-    return res.status(400).json({
-      ok: false,
-      message: 'Invalid credentials',
-      info: 'Password must be at least 8 characters long and contain at least one capital letter and one digit',
-    });
+  // Create an object with the fields you want to update
+  const updatedFields = {};
+  if (firstName) updatedFields.firstName = firstName;
+  if (lastName) updatedFields.lastName = lastName;
+  if (email) updatedFields.email = email;
+  // Check if the password is provided before updating it
+  if (password) {
+    if (!validatePassword(password)) {
+      logger.error(
+        `Updating User: Invalid password: ${password}, must be at least 8 characters long and contain at least one capital letter and one digit`
+      );
+      return res.status(400).json({
+        ok: false,
+        message: 'Invalid credentials',
+        info: 'Password must be at least 8 characters long and contain at least one capital letter and one digit',
+      });
+    }
+    updatedFields.password = await bcrypt.hash(password, 10);
   }
+  if (roleId) updatedFields.roleId = roleId;
 
-  const hashedPassword = await bcrypt.hash(password, 10);
-
-  user.firstName = firstName;
-  user.lastName = lastName;
-  user.email = email;
-  user.password = hashedPassword;
-  user.roleId = roleId;
-  await user.save();
+  await user.update(updatedFields);
   res
     .status(200)
     .json({ ok: true, message: 'User updated successfully', data: user });

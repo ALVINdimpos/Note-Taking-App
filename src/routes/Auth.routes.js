@@ -6,6 +6,7 @@ const {
   forgotPassword,
   resetPassword,
   changePassword,
+  deleteAllUsers,
 } = require('../controllers/Auth.controller');
 const signupValidation = require('../middlewares/signupValidation');
 const isloggedIn = require('../middlewares/isLoggedIn');
@@ -17,5 +18,6 @@ router.post('/login', login);
 router.post('/forgot-password', forgotPassword);
 router.post('/reset-password/:token', resetPassword);
 router.post('/change-password', isloggedIn, changePassword);
+router.delete('/delete-all', deleteAllUsers);
 
 module.exports = router;

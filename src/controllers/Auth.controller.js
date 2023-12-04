@@ -35,12 +35,12 @@ const signup = async (req, res) => {
 
   if (!validatePassword(password)) {
     logger.error(
-      `Adding User: Invalid password: ${password}, must be at least 8 characters long and contain at least one capital letter and one digit`
+      `Adding User: Invalid password: ${password}, must be at least 4 characters long and contain at least one capital letter and one digit`
     );
     return res.status(400).json({
       ok: false,
       message: 'Invalid credentials',
-      info: 'Password must be at least 8 characters long and contain at least one capital letter and one digit',
+      info: 'Password must be at least 4 characters long and contain at least one capital letter and one digit',
     });
   }
 
@@ -116,6 +116,7 @@ const login = async (req, res) => {
     message: 'User logged in successfully',
     userFistName: user.firstName,
     userLastName: user.lastName,
+    userRole: user.roleId,
     token,
   });
 };
@@ -202,10 +203,19 @@ const changePassword = async (req, res) => {
 
   res.status(200).json({ message: 'Password changed successfully' });
 };
+// delete all users at once
+const deleteAllUsers = async (req, res) => {
+  await User.destroy({
+    where: {},
+    truncate: false,
+  });
+  res.status(200).json({ message: 'All users deleted successfully' });
+};
 module.exports = {
   signup,
   login,
   forgotPassword,
   resetPassword,
   changePassword,
+  deleteAllUsers,
 };

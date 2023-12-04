@@ -119,3 +119,35 @@
 2023-12-03 21:06:45 error: Adding User: User with this email: fistonalvin1@gmail.com already exists.
 2023-12-03 21:38:58 error: Connections using insecure transport are prohibited while --require_secure_transport=ON.
 2023-12-03 23:00:28 error: Table 'taskmanager.users' doesn't exist
+2023-12-04 10:27:11 error: connect ECONNREFUSED ::1:3306
+2023-12-04 10:27:18 error: connect ECONNREFUSED ::1:3306
+2023-12-04 10:27:33 error: connect ECONNREFUSED ::1:3306
+2023-12-04 10:42:59 error: Adding User: User with this email: fistonalvin1@gmail.com already exists.
+2023-12-04 10:43:42 error: Cannot delete or update a parent row: a foreign key constraint fails (`bizcotap_new`.`notes`, CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`))
+2023-12-04 10:44:07 error: Cannot delete or update a parent row: a foreign key constraint fails (`bizcotap_new`.`notes`, CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`))
+2023-12-04 10:44:24 error: Cannot delete or update a parent row: a foreign key constraint fails (`bizcotap_new`.`notes`, CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`))
+2023-12-04 10:46:36 error: Cannot delete or update a parent row: a foreign key constraint fails (`bizcotap_new`.`notes`, CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`))
+2023-12-04 10:51:18 error: Cannot delete or update a parent row: a foreign key constraint fails (`bizcotap_new`.`notes`, CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`))
+2023-12-04 10:53:09 error: Login User: User with this email: test6@gmail.com entered a wrong password
+2023-12-04 10:55:33 error: Adding User: Invalid password: addmin@123, must be at least 8 characters long and contain at least one capital letter and one digit
+2023-12-04 10:56:12 error: Adding User: Invalid password: addmin@123, must be at least 8 characters long and contain at least one capital letter and one digit
+2023-12-04 10:58:49 error: Adding User: Invalid password: addmin@123, must be at least 4 characters long and contain at least one capital letter and one digit
+2023-12-04 10:59:00 error: Adding User: Invalid password: admin@123, must be at least 4 characters long and contain at least one capital letter and one digit
+2023-12-04 10:59:47 error: Adding User: Invalid password: admin@123, must be at least 4 characters long and contain at least one capital letter and one digit
+2023-12-04 11:02:25 error: Updating User: Invalid password: undefined, must be at least 8 characters long and contain at least one capital letter and one digit
+2023-12-04 11:04:49 error: Updating User: Invalid password: undefined, must be at least 8 characters long and contain at least one capital letter and one digit
+2023-12-04 11:05:55 error: data and salt arguments required
+2023-12-04 11:07:32 error: Updating User: Invalid password: undefined, must be at least 8 characters long and contain at least one capital letter and one digit
+2023-12-04 11:08:48 error: Cannot add or update a child row: a foreign key constraint fails (`bizcotap_new`.`users`, CONSTRAINT `users_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `roles` (`id`))
+2023-12-04 11:10:47 error: Deleting Role: Role with ID 1 not found
+2023-12-04 11:11:04 error: Cannot delete or update a parent row: a foreign key constraint fails (`bizcotap_new`.`users`, CONSTRAINT `users_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `roles` (`id`))
+2023-12-04 11:12:01 error: Updating Role: Role with ID 1 not found
+2023-12-04 11:13:47 error: Updating User: User with ID 17 not found
+2023-12-04 12:33:21 error: Updating User: Invalid email address: , should follow the following partner xxx@xxx.xxx 
+2023-12-04 12:35:01 error: Updating User: Invalid email address: , should follow the following partner xxx@xxx.xxx 
+2023-12-04 12:36:09 error: Updating User: Invalid email address: , should follow the following partner xxx@xxx.xxx 
+2023-12-04 12:37:02 error: Updating User: Invalid email address: , should follow the following partner xxx@xxx.xxx 
+2023-12-04 12:37:16 error: Updating User: Invalid email address: , should follow the following partner xxx@xxx.xxx 
+2023-12-04 12:39:18 error: Updating User: Invalid email address: , should follow the following partner xxx@xxx.xxx 
+2023-12-04 12:47:12 error: Updating User: Invalid email address: undefined, should follow the following partner xxx@xxx.xxx 
+2023-12-04 12:49:13 error: Updating User: Invalid email address: undefined, should follow the following partner xxx@xxx.xxx 
