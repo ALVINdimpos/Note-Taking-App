@@ -118,3 +118,4 @@
 2023-12-03 21:05:36 error: Login User: User with this email: test6@gmail.com entered a wrong password
 2023-12-03 21:06:45 error: Adding User: User with this email: fistonalvin1@gmail.com already exists.
 2023-12-03 21:38:58 error: Connections using insecure transport are prohibited while --require_secure_transport=ON.
+2023-12-03 23:00:28 error: Table 'taskmanager.users' doesn't exist
